@@ -37,7 +37,7 @@ export const HighLight = styled.b`
 export const SubSection = styled.section`
  ${Section} & {
     margin-left: 16px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
  } 
 `
 

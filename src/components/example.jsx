@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {color} from "./styles";
+import { color } from "./styles";
 
 export default styled.div`
   display: block;
@@ -220,6 +220,26 @@ export const JustifiedWithSpaceBetween = styled.div`
      background: ${color.rouge};
     }
 `
+export const JustifiedWithMargin = styled.div`
+    display: flex;
+    flex-direction: row;
+    background: ${color.camel};
+    color: ${color.ivory};
+    padding: 8px;
+    
+    & div {
+        background: ${color.indigo};
+        padding: 8px;
+    }
+    & div:nth-child(2) {
+        background: ${color.rouge};
+    }
+    & .right {
+        margin-left: auto;
+        background: ${color.tea};
+        color: ${color.night};
+    }
+`
 
 export const FlexBox = styled.div`
     color: ${color.ivory};
@@ -317,6 +337,15 @@ export const GridAreaLayout = styled.div`
         "m m h h h h h h h h h h"
         "m m c c c c c c c c c c"
         ". . f f f f f f f f . .";
+    
+        @media (max-width: 600px) {
+            grid-template-rows: 40px auto auto 40px;
+            grid-template-areas: 
+                "h h h h h h h h h h h h"
+                "m m m m m m m m m m m m"
+                "c c c c c c c c c c c c"
+                "f f f f f f f f f f f f";
+        }
         
     & > div {
         padding: 8px;
@@ -327,6 +356,12 @@ export const GridAreaLayout = styled.div`
     .header {
         grid-area: h;
         background-color: ${color.bamboo};
+
+        @media (max-width: 600px){
+            &:hover + .menu {
+                display: block;
+            }
+        }
     }
 
     .menu {
@@ -334,6 +369,14 @@ export const GridAreaLayout = styled.div`
         background-color: ${color.autumn};
         color: ${color.night};
         min-height: 320px;
+
+        @media (max-width: 600px){
+            display: none;
+
+            &:hover {
+                display: block;
+            }
+        }
     }
 
     .content {

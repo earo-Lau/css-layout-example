@@ -19,7 +19,8 @@ import Example, {
     GridRowByFlex,
     GridCellByFlex,
     HolyGrailWithGrid,
-    GridAreaLayout
+    GridAreaLayout,
+    JustifiedWithMargin
 } from "./components/example";
 
 function App() {
@@ -65,13 +66,15 @@ function App() {
                     <SC.SubSection>
                         <h3>水平居中</h3>
                         <SC.SubSection>
-                            行内文本居中：使用 <SC.HighLight>text-align</SC.HighLight> 属性
+                            <h5>
+                                行内文本居中：使用 <SC.HighLight>text-align</SC.HighLight> 属性
+                            </h5>
 
                             <Code>
                                 {`
 .inline-center {
     text-align: center;
- }
+}
  `}
                             </Code>
                             <Example>
@@ -82,7 +85,7 @@ function App() {
                             </Example>
                         </SC.SubSection>
                         <SC.SubSection>
-                            固定宽度的 block 元素, 利用 <SC.HighLight>margin: auto</SC.HighLight>
+                            <h5>固定宽度的 block 元素, 利用 <SC.HighLight>margin: auto</SC.HighLight></h5>
                             <Code>
                                 {`
 .width-block-center {
@@ -104,8 +107,10 @@ function App() {
                             </Example>
                         </SC.SubSection>
                         <SC.SubSection>
-                            非固定宽度的 block 元素, 父元素设置 <SC.HighLight>text-align</SC.HighLight>,
+                            <h5>
+                                非固定宽度的 block 元素, 父元素设置 <SC.HighLight>text-align</SC.HighLight>,
                             让子元素使用 <SC.HighLight>display: inline</SC.HighLight> 布局
+                            </h5>
 
                             <Code>
                                 {`
@@ -134,7 +139,7 @@ function App() {
                             </Example>
                         </SC.SubSection>
                         <SC.SubSection>
-                            使用 Flex 布局
+                            <h5>使用 Flex 布局</h5>
 
                             <Code>
                                 {`
@@ -161,7 +166,7 @@ function App() {
                         <h3>垂直居中</h3>
                         <div>
                             <SC.SubSection>
-                                使单行内联文本, 通过父元素设置 <SC.HighLight>line-height</SC.HighLight>, 从而让子元素垂直居中
+                                <h5>使单行内联文本, 通过父元素设置 <SC.HighLight>line-height</SC.HighLight>, 从而让子元素垂直居中</h5>
 
                                 <Code>
                                     {`
@@ -179,8 +184,8 @@ function App() {
                                 </Example>
                             </SC.SubSection>
                             <SC.SubSection>
-                                多行内联文本，通过内部元素设置 <SC.HighLight>display: inline-block</SC.HighLight>,
-                                同时设置 <SC.HighLight>vertical-align: middle</SC.HighLight>，可以让兄弟元素竖直居中
+                                <h5>多行内联文本，通过内部元素设置 <SC.HighLight>display: inline-block</SC.HighLight>,
+                                同时设置 <SC.HighLight>vertical-align: middle</SC.HighLight>，可以让兄弟元素竖直居中</h5>
 
                                 <Code>
                                     {`
@@ -213,7 +218,7 @@ function App() {
                     <SC.SubSection>
                         <SC.SubSection>
 
-                            所谓圣杯布局是指采用左右等宽(固定宽度)，中间自适应的三列布局模式。
+                            <h5>所谓圣杯布局是指采用左右等宽(固定宽度)，中间自适应的三列布局模式。</h5>
                             <table style={{width: '100%'}}>
                                 <tr>
                                     <th>
@@ -242,7 +247,7 @@ function App() {
 
                         <SC.SubSection>
 
-                            左右列固定宽度，使用 <b>float + margin</b> 的实现
+                            <h5>左右列固定宽度，使用 <b>float + margin</b> 的实现</h5>
                             <Code>
                                 {` 
 .left {
@@ -270,7 +275,7 @@ function App() {
                             </Example>
                         </SC.SubSection>
                         <SC.SubSection>
-                            左右列固定宽度，通过 <SC.HighLight>position + margin</SC.HighLight> 的实现
+                            <h5>左右列固定宽度，通过 <SC.HighLight>position + margin</SC.HighLight> 的实现</h5>
 
                             <Code>
                                 {`
@@ -301,7 +306,7 @@ function App() {
                             </Example>
                         </SC.SubSection>
                         <SC.SubSection>
-                            (双飞翼)左右列固定宽度，通过 <SC.HighLight>float + 负margin</SC.HighLight> 的实现
+                            <h5>(双飞翼)左右列固定宽度，通过 <SC.HighLight>float + 负margin</SC.HighLight> 的实现</h5>
 
                             <Code>
                                 {`
@@ -342,7 +347,7 @@ function App() {
                             </Example>
                         </SC.SubSection>
                         <SC.SubSection>
-                            使用 Flex 布局实现
+                            <h5>使用 Flex 布局实现</h5>
 
                             <Code>
                                 {`
@@ -416,9 +421,10 @@ function App() {
                                 </ul>
                             </div>
                         </Example>
+                        
 
                         <SC.SubSection>
-                            使用 <SC.HighLight>justify-content</SC.HighLight> 两端对齐
+                            <h5>使用 <SC.HighLight>justify-content</SC.HighLight> 两端对齐</h5>
 
                             <Code>
                                 {` 
@@ -442,8 +448,39 @@ function App() {
                             </Example>
                         </SC.SubSection>
                         <SC.SubSection>
-                            流式布局:
-                            即容器宽度固定，内部自动填充并且自动换行
+                            <h5>对于多于两个子元素的两端对齐,
+                                使用 <SC.HighLight>margin-left: auto</SC.HighLight> 使子元素自动对齐到右侧</h5>
+
+                            <Code>
+                                {` 
+.panel-title {
+    display: flex;
+    flex-direction: row;
+}
+
+.right-option{
+    margin-left: auto;
+}
+                            `}
+                            </Code>
+                            <Example>
+                                实例1:
+                                <JustifiedWithMargin>
+                                    <div>
+                                        内部文本1
+                                    </div>
+                                    <div>
+                                        内部文本2
+                                    </div>
+                                    <div className={'right'}>
+                                        内部文本3
+                                    </div>
+                                </JustifiedWithMargin>
+                            </Example>
+                        </SC.SubSection>
+                        <SC.SubSection>
+                            <h5>流式布局:
+                            即容器宽度固定，内部自动填充并且自动换行</h5>
                             <Code>
                                 {`
 .parent {
@@ -481,8 +518,8 @@ function App() {
                             </Example>
                         </SC.SubSection>
                         <SC.SubSection>
-                            基于Flex 的栅格系统(Grid System):
-                            栅格系统把容器进行12等分，在定义子元素的时候，根据需要定义子元素的宽度
+                            <h5>基于Flex 的栅格系统(Grid System):
+                            栅格系统把容器进行12等分，在定义子元素的时候，根据需要定义子元素的宽度</h5>
 
                             <Code>
                                 {`
@@ -536,7 +573,7 @@ function App() {
                     <header>
                         <h2>Grid 布局</h2>
                     </header>
-                    Grid 布局方式是另一种更加强大的布局方式，比 Flex 更加直观并简约, 其使用也与使用 Table 类似
+                    <h5>Grid 布局方式是另一种更加强大的布局方式，比 Flex 更加直观并简约, 其使用也与使用 Table 类似</h5>
 
                     <Example>
                         <h5>单位介绍:</h5>
@@ -573,7 +610,7 @@ function App() {
                     </Example>
 
                     <SC.SubSection>
-                        使用 Grid 的圣杯布局
+                        <h5>使用 Grid 的圣杯布局</h5>
 
                         <Code>
                             {` 
@@ -616,7 +653,7 @@ body {
                         </Example>
                     </SC.SubSection>
                     <SC.SubSection>
-                        使用 grid-area 进行布局
+                        <h5>使用 grid-area 进行布局</h5>
 
                         <Code>
                             {`
