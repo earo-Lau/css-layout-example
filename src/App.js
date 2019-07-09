@@ -20,7 +20,7 @@ import Example, {
     GridCellByFlex,
     HolyGrailWithGrid,
     GridAreaLayout,
-    JustifiedWithMargin
+    JustifiedWithMargin, MiddleWithFlex
 } from "./components/example";
 
 function App() {
@@ -208,8 +208,30 @@ function App() {
                                     </MiddleWithMultipleLine>
                                 </Example>
                             </SC.SubSection>
+                            <SC.SubSection>
+                                <h5>使用 Flex 布局</h5>
+
+                                <Code>
+                                    {`
+.vertical-box-flex {
+      display: flex;
+      align-items: center;
+  }
+                                `}
+                                </Code>
+                                <Example>
+                                    实例:
+                                    <MiddleWithFlex color={'tea'} background={'autumn'}>
+                                        外部空间
+                                        <div className={'inside'}>
+                                            行内文本
+                                        </div>
+                                    </MiddleWithFlex>
+                                </Example>
+                            </SC.SubSection>
                         </div>
                     </SC.SubSection>
+
                 </SC.Section>
                 <SC.Section>
                     <header>

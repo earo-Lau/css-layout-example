@@ -78,6 +78,18 @@ export const MiddleWithMultipleLine = styled.div`
     background: ${props => color[props.background]};
   }
 `
+export const MiddleWithFlex = styled.div`
+  color: ${color.ivory};
+  background: ${color.camel};
+  display: flex;
+  align-items: center;
+  height: 240px;
+  
+  & .inside {
+    color: ${props => color[props.color]};
+    background: ${props => color[props.background]};
+  }
+`
 
 export const HolyGrailWithFloat = styled.div`
   width: 100%;
